@@ -1,8 +1,59 @@
-# Computer Pointer Controller
+# edge_gaze_estimation
 
-*TODO:* Write a short introduction to your project
+Edge computer pointer controller using Intel OpenVINO pre-trained inference models.
 
 ## Project Set Up and Installation
+
+### Download inference models using the Model Downloader
+
+Go to your OpenVINO Model Downloader folder, for instance:
+
+`cd /opt/intel/openvino/deployment_tools/tools/model_downloader`
+
+The models to download are the following:
+
+- [Face Detection](https://docs.openvinotoolkit.org/2020.3/omz_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
+
+- [Head Pose Estimation](https://docs.openvinotoolkit.org/2020.3/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
+
+- [Facial Landmarks Regression](https://docs.openvinotoolkit.org/2020.3/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
+
+- [Gaze Estimation](https://docs.openvinotoolkit.org/2020.3/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html)
+
+#### Download all OpenVINO pre-trained models:
+
+You can download all OpenVINO pre-trained models with the following command:
+
+`sudo python3.6 downloader.py --all --output_dir ~/git/openvino-models`
+
+<em> By default, `--output_dir` is not required and the models are downloaded to the `model_downloader/intel` directory. The `home/user/git/openvino-models` folder is a personal choice. </em>
+
+#### Download all required models, all precisions
+For this project, all precisions were downloaded since this is still a work in progress and model precisions have not been compared yet.
+
+The `dl.sh` script will download all four models and store them at `~/git/openvino-models`:
+
+`./scripts/dl.sh`
+
+##### Download each model individually
+If for some reason the script doesn't work, models can still be downloaded individually.
+
+- [Face Detection](https://docs.openvinotoolkit.org/2020.3/omz_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
+
+`sudo python3.6 downloader.py --name face-detection-adas-binary-0001 --output_dir ~/git/openvino-models`
+
+- [Head Pose Estimation](https://docs.openvinotoolkit.org/2020.3/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
+
+`sudo python3.6 downloader.py --name head-pose-estimation-adas-0001 --output_dir ~/git/openvino-models`
+
+- [Facial Landmarks Regression](https://docs.openvinotoolkit.org/2020.3/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
+
+`sudo python3.6 downloader.py --name landmarks-regression-retail-0009 --output_dir ~/git/openvino-models`
+
+- [Gaze Estimation](https://docs.openvinotoolkit.org/2020.3/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html)
+
+`sudo python3.6 downloader.py --name gaze-estimation-adas-0002 --output_dir ~/git/openvino-models`
+
 *TODO:* Explain the setup procedures to run your project. For instance, this can include your project directory structure, the models you need to download and where to place them etc. Also include details about how to install the dependencies your project requires.
 
 ## Demo
