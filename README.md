@@ -1,11 +1,21 @@
 # edge_gaze_estimation
+[![Python Version](https://img.shields.io/badge/Python-3.5|3.6-blue.svg)](https://shields.io/)
+[![GitHub license](https://img.shields.io/github/license/socd06/edge-smart-queue)](https://github.com/socd06/edge-smart-queue/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Edge computer pointer controller using Intel OpenVINO pre-trained inference models.
 
 ## Project Set Up and Installation
+### Requirements
+- Ubuntu 18.04 LTS
+- Python > 3.5, 3.6
+- A virtual environment
+
+### Download and Install Intel OpenVINO
+- [Download OpenVINO](https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit/choose-download.html)
+- [Go through OpenVINO Getting Started Guide](https://docs.openvinotoolkit.org/latest/index.html)
 
 ### Download inference models using the Model Downloader
-
 Go to your OpenVINO Model Downloader folder, for instance:
 
 `cd /opt/intel/openvino/deployment_tools/tools/model_downloader`
